@@ -71,16 +71,17 @@ def test_function_name_had_cap_letter():
 #@pytest.mark.parametrize('num', [10,100,1000,10000])
 def test_who_faster():
 	nt_tot = 0
-	for i in range(5):
+	n=3
+	for i in range(n):
 		nt_tot += generate_random_profile(10000)[1]
-	nt_av = nt_tot/5
+	nt_av = nt_tot/n
 
 	dict_tot = 0
-	for i in range(5):
+	for i in range(n):
 		dict_tot += generate_random_profile_dicts(10000)[1]
-	dict_av = dict_tot/5
+	dict_av = dict_tot/n
 
 	
-	assert nt_av < dict_av, f"It seems Dict() is faster than Namedtuples for {num} sample"
+	assert nt_av < dict_av, f"It seems Dict() is faster than Namedtuples"
 	
 
