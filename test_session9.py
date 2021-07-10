@@ -68,7 +68,7 @@ def test_function_name_had_cap_letter():
 		assert len(re.findall('([A-Z])', function[0])) == 0, "You have used Capital letter(s) in your function names"
 
 
-@pytest.mark.parametrize('num', [10,100,1000,10000])
+@pytest.mark.parametrize('num', [1000,10000])
 def test_who_faster(num):
 	assert generate_random_profile(num)[1] < generate_random_profile_dicts(num)[1], f"It seems Dict() is faster than Namedtuples for {num} sample"
 	
